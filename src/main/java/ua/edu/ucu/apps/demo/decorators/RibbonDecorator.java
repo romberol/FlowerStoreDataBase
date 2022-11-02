@@ -1,9 +1,10 @@
-package ua.edu.ucu.apps.demo.Decorators;
+package ua.edu.ucu.apps.demo.decorators;
 
 import ua.edu.ucu.apps.demo.Item;
 
-public class RibbonDecorator extends ItemDecorator{
+public class RibbonDecorator extends ItemDecorator {
     private Item item;
+    private int add = 40;
 
     public RibbonDecorator(String description, Item item) {
         super(description);
@@ -12,6 +13,6 @@ public class RibbonDecorator extends ItemDecorator{
 
     @Override
     public double price() {
-        return 40 + item.price();
+        return add + item.price();
     }
 }

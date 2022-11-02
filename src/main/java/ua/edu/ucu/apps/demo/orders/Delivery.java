@@ -1,4 +1,4 @@
-package ua.edu.ucu.apps.demo.Orders;
+package ua.edu.ucu.apps.demo.orders;
 
 import ua.edu.ucu.apps.demo.Item;
 

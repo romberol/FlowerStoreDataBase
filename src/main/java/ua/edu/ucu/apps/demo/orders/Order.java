@@ -1,6 +1,5 @@
-package ua.edu.ucu.apps.demo.Orders;
+package ua.edu.ucu.apps.demo.orders;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import ua.edu.ucu.apps.demo.Item;
 
@@ -15,31 +14,32 @@ public class Order {
     @Getter
     private Delivery delivery;
 
-    public Order(){
+    public Order() {
         this.items = new ArrayList<>();
     }
-    public void setPaymentStrategy(Payment payment){
-        this.payment = payment;
+
+    public void setPaymentStrategy(Payment paym) {
+        this.payment = paym;
     }
 
-    public void setDeliveryStrategy(Delivery delivery) {
-        this.delivery = delivery;
+    public void setDeliveryStrategy(Delivery del) {
+        this.delivery = del;
     }
 
-    public double calculateTotalPrice(){
+    public double calculateTotalPrice() {
         return this.items.stream().mapToDouble(Item::price).sum();
     }
 
-    public void addItem(Item item){
+    public void addItem(Item item) {
         this.items.add(item);
     }
 
-    public boolean removeItem(Item item){
+    public boolean removeItem(Item item) {
         return this.items.remove(item);
     }
 
-    public boolean processOrder(User user){
-        if(this.payment.pay(calculateTotalPrice(), user)){
+    public boolean processOrder(User user) {
+        if (this.payment.pay(calculateTotalPrice(), user)) {
             return this.delivery.deliver(items, user);
         }
         return false;

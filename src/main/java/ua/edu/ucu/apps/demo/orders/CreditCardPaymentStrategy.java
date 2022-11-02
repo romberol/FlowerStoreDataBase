@@ -1,9 +1,8 @@
-package ua.edu.ucu.apps.demo.Orders;
+package ua.edu.ucu.apps.demo.orders;
 
-public class PayPalPaymentStrategy implements Payment{
+public class CreditCardPaymentStrategy implements Payment {
     @Override
     public boolean pay(double price, User user) {
         return user.pay(price);
     }
-
 }

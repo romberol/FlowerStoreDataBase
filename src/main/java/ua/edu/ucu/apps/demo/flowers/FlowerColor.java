@@ -1,4 +1,4 @@
-package ua.edu.ucu.apps.demo.Flowers;
+package ua.edu.ucu.apps.demo.flowers;
 
 public enum FlowerColor {
     /**

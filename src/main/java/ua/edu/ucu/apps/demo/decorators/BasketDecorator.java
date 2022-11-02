@@ -1,9 +1,11 @@
-package ua.edu.ucu.apps.demo.Decorators;
+package ua.edu.ucu.apps.demo.decorators;
 
 import ua.edu.ucu.apps.demo.Item;
 
-public class BasketDecorator extends ItemDecorator{
+public class BasketDecorator extends ItemDecorator {
+    private int add = 4;
     private Item item;
+
     public BasketDecorator(String description, Item item) {
         super(description);
         this.item = item;
@@ -11,6 +13,6 @@ public class BasketDecorator extends ItemDecorator{
 
     @Override
     public double price() {
-        return 4 + item.price();
+        return add + item.price();
     }
 }

@@ -1,10 +1,10 @@
-package ua.edu.ucu.apps.demo.Decorators;
+package ua.edu.ucu.apps.demo.decorators;
 
 import ua.edu.ucu.apps.demo.Item;
 
 abstract class ItemDecorator extends Item {
 
-    public ItemDecorator(String description) {
+    ItemDecorator(String description) {
         super(description);
     }
 }
