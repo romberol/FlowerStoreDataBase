@@ -12,9 +12,9 @@ import java.util.List;
 @RequestMapping("/flowers/flowerbuckets")
 @RestController
 public class FlowerBucketManager {
-    private List<FlowerBucket> bucketList = new ArrayList<>();
     private static final int SEPAL = 12;
     private static final double PRICE = 12.90;
+    private List<FlowerBucket> bucketList = new ArrayList<>();
 
     public FlowerBucketManager() {
         Flower flower = new Flower("1", SEPAL, FlowerColor.RED, PRICE);

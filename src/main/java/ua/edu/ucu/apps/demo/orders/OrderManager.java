@@ -12,17 +12,18 @@ import java.util.List;
 @RequestMapping("/order")
 @RestController
 public class OrderManager {
-    private List<Order> orders = new ArrayList<>();
-    private boolean resultOfTransaction;
     private static final double PRICE = 12.90;
     private static final int PRICESECOND = 123;
     private static final int SEPAL = 12;
     private static final int SEPALSECOND = 20;
     private static final int BALANCE = 1000;
+    private List<Order> orders = new ArrayList<>();
+    private boolean resultOfTransaction;
 
     public OrderManager() {
         Flower flower = new Flower("1", SEPAL, FlowerColor.RED, PRICE);
-        Flower flowerSecond = new Flower("2", SEPALSECOND, FlowerColor.BLUE, PRICESECOND);
+        Flower flowerSecond = new Flower("2", SEPALSECOND,
+                FlowerColor.BLUE, PRICESECOND);
         Order order = new Order();
         order.addItem(flower);
         order.addItem(flowerSecond);
