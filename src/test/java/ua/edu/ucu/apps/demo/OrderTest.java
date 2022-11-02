@@ -24,9 +24,10 @@ public class OrderTest {
 //    private boolean resultOfTransaction;
 
     @Test
-    public void testTransaction(){
+    public void testTransaction() {
         Flower flower = new Flower(DESCR, SEPAL, FlowerColor.RED, PRICE);
-        Flower flowerSecond = new Flower(DESCRSECOND, SEPAL, FlowerColor.BLUE, PRICE);
+        Flower flowerSecond = new Flower(DESCRSECOND, SEPAL,
+                FlowerColor.BLUE, PRICE);
         Order order = new Order();
         order.addItem(flower);
         order.addItem(flowerSecond);

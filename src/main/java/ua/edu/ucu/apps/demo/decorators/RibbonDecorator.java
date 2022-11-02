@@ -4,7 +4,7 @@ import ua.edu.ucu.apps.demo.Item;
 
 public class RibbonDecorator extends ItemDecorator {
     private Item item;
-    private int add = 40;
+    private static final int ADD = 40;
 
     public RibbonDecorator(String description, Item item) {
         super(description);
@@ -13,6 +13,6 @@ public class RibbonDecorator extends ItemDecorator {
 
     @Override
     public double price() {
-        return add + item.price();
+        return ADD + item.price();
     }
 }

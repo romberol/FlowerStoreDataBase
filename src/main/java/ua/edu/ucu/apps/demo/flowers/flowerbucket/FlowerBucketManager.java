@@ -13,11 +13,11 @@ import java.util.List;
 @RestController
 public class FlowerBucketManager {
     private List<FlowerBucket> bucketList = new ArrayList<>();
+    private static final int SEPAL = 12;
+    private static final double PRICE = 12.90;
 
     public FlowerBucketManager() {
-        int sepal = 12;
-        double price = 12.90;
-        Flower flower = new Flower("1", sepal, FlowerColor.RED, price);
+        Flower flower = new Flower("1", SEPAL, FlowerColor.RED, PRICE);
         FlowerBucket bucket = new FlowerBucket("2");
         bucket.addFlower(flower);
         this.bucketList.add(bucket);

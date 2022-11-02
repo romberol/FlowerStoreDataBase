@@ -3,7 +3,7 @@ package ua.edu.ucu.apps.demo.decorators;
 import ua.edu.ucu.apps.demo.Item;
 
 public class BasketDecorator extends ItemDecorator {
-    private int add = 4;
+    private static final int ADD = 4;
     private Item item;
 
     public BasketDecorator(String description, Item item) {
@@ -13,6 +13,6 @@ public class BasketDecorator extends ItemDecorator {
 
     @Override
     public double price() {
-        return add + item.price();
+        return ADD + item.price();
     }
 }

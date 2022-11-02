@@ -14,21 +14,21 @@ import java.util.List;
 public class OrderManager {
     private List<Order> orders = new ArrayList<>();
     private boolean resultOfTransaction;
+    private static final double PRICE = 12.90;
+    private static final int PRICESECOND = 123;
+    private static final int SEPAL = 12;
+    private static final int SEPALSECOND = 20;
+    private static final int BALANCE = 1000;
 
     public OrderManager() {
-        double price = 12.90;
-        int priceSecond = 123;
-        int sepal = 12;
-        int sepalSecond = 20;
-        int balance = 1000;
-        Flower flower = new Flower("1", sepal, FlowerColor.RED, price);
-        Flower flowerSecond = new Flower("2", sepalSecond, FlowerColor.BLUE, priceSecond);
+        Flower flower = new Flower("1", SEPAL, FlowerColor.RED, PRICE);
+        Flower flowerSecond = new Flower("2", SEPALSECOND, FlowerColor.BLUE, PRICESECOND);
         Order order = new Order();
         order.addItem(flower);
         order.addItem(flowerSecond);
         order.setDeliveryStrategy(new DHLDeliveryStrategy());
         order.setPaymentStrategy(new PayPalPaymentStrategy());
-        User user = new User(balance, "Ukraine");
+        User user = new User(BALANCE, "Ukraine");
         this.resultOfTransaction = order.processOrder(user);
         this.orders.add(order);
     }
@@ -40,8 +40,9 @@ public class OrderManager {
 
     @GetMapping("/results")
     public String getResults() {
-        if (this.resultOfTransaction)
+        if (this.resultOfTransaction) {
             return "Transaction was successful";
+        }
         return "Transaction wasn't successful";
     }
 }
