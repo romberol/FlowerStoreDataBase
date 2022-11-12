@@ -152,10 +152,6 @@
         <module name="AvoidStarImport"/>
         <module name="AvoidStaticImport"/>
 
-        <module name="IllegalImport">
-            <property name="illegalPkgs"
-                      value="java.sql, sun, java.net, java.security, javax, java.applet, java.beans, java.nio, java.rmi, java.text, java.lang.reflect, java.lang.instrument"/>
-        </module>
 
         <module name="RedundantImport"/>
         <module name="UnusedImports"/>
