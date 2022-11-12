@@ -4,13 +4,10 @@ import ua.edu.ucu.apps.demo.Item;
 
 public class PaperDecorator extends ItemDecorator {
     private static final int ADD = 13;
-    private Item item;
 
-    public PaperDecorator(String description, Item item) {
-        super(description);
-        this.item = item;
+    public PaperDecorator(Item item) {
+        super(item);
     }
-
     @Override
     public double price() {
         return ADD + item.price();

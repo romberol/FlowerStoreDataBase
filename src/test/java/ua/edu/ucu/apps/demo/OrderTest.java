@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ua.edu.ucu.apps.demo.flowers.Flower;
 import ua.edu.ucu.apps.demo.flowers.FlowerColor;
+import ua.edu.ucu.apps.demo.flowers.FlowerType;
 import ua.edu.ucu.apps.demo.orders.DHLDeliveryStrategy;
 import ua.edu.ucu.apps.demo.orders.Order;
 import ua.edu.ucu.apps.demo.orders.PayPalPaymentStrategy;
@@ -15,19 +16,16 @@ import java.util.List;
 public class OrderTest {
     private static final int PRICE = 100;
     private static final int SEPAL = 13;
-    private static final String DESCR = "Flower 1";
-    private static final String DESCRSECOND = "Flower 2";
     private static final double BALANCE = 300;
     private static final String FINALADDRESS = "Ukraine";
 
-    private List<Order> orders = new ArrayList<>();
-//    private boolean resultOfTransaction;
+    private final List<Order> orders = new ArrayList<>();
 
     @Test
     public void testTransaction() {
-        Flower flower = new Flower(DESCR, SEPAL, FlowerColor.RED, PRICE);
-        Flower flowerSecond = new Flower(DESCRSECOND, SEPAL,
-                FlowerColor.BLUE, PRICE);
+        Flower flower = new Flower(1, SEPAL, FlowerColor.RED, PRICE, FlowerType.TULIP);
+        Flower flowerSecond = new Flower(2, SEPAL,
+                FlowerColor.BLUE, PRICE, FlowerType.CHAMOMILE);
         Order order = new Order();
         order.addItem(flower);
         order.addItem(flowerSecond);

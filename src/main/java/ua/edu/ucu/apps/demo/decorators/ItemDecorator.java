@@ -3,8 +3,9 @@ package ua.edu.ucu.apps.demo.decorators;
 import ua.edu.ucu.apps.demo.Item;
 
 abstract class ItemDecorator extends Item {
+    final Item item;
 
-    ItemDecorator(String description) {
-        super(description);
+    ItemDecorator(Item item) {
+        this.item = item;
     }
 }

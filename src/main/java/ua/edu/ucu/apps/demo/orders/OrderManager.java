@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ua.edu.ucu.apps.demo.flowers.Flower;
 import ua.edu.ucu.apps.demo.flowers.FlowerColor;
+import ua.edu.ucu.apps.demo.flowers.FlowerType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,13 +18,13 @@ public class OrderManager {
     private static final int SEPAL = 12;
     private static final int SEPALSECOND = 20;
     private static final int BALANCE = 1000;
-    private List<Order> orders = new ArrayList<>();
-    private boolean resultOfTransaction;
+    private final List<Order> orders = new ArrayList<>();
+    private final boolean resultOfTransaction;
 
     public OrderManager() {
-        Flower flower = new Flower("1", SEPAL, FlowerColor.RED, PRICE);
-        Flower flowerSecond = new Flower("2", SEPALSECOND,
-                FlowerColor.BLUE, PRICESECOND);
+        Flower flower = new Flower(1, SEPAL, FlowerColor.RED, PRICE, FlowerType.TULIP);
+        Flower flowerSecond = new Flower(2, SEPALSECOND,
+                FlowerColor.BLUE, PRICESECOND, FlowerType.CHAMOMILE);
         Order order = new Order();
         order.addItem(flower);
         order.addItem(flowerSecond);

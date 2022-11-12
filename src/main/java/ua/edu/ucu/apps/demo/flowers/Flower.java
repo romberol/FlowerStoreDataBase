@@ -1,30 +1,29 @@
 package ua.edu.ucu.apps.demo.flowers;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import ua.edu.ucu.apps.demo.Item;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 @Setter
+@Entity
+@Table
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Flower extends Item {
-    @Getter
+    @Id @GeneratedValue
+    private int id;
     private double sepalLength;
     private FlowerColor color;
     private double price;
-    @Getter
-    private FlowerType flowerType = FlowerType.TULIP; //by Default
-
-
-    public Flower(String description, double sepalLength,
-                  FlowerColor color, double price) {
-        super(description);
-        this.price = price;
-        this.sepalLength = sepalLength;
-        this.color = color;
-    }
-
-    public String getColor() {
-        return color.toString();
-    }
+    private FlowerType flType;
 
     @Override
     public double price() {

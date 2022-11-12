@@ -9,17 +9,16 @@ import java.util.ArrayList;
 
 public class FlowerBucket extends Item {
     @Getter
-    private ArrayList<Flower> bucket;
+    private final ArrayList<Flower> bucket;
 
-    public FlowerBucket(String description) {
-        super(description);
+    public FlowerBucket() {
         this.bucket = new ArrayList<>();
     }
 
     public ArrayList<Flower> searchFlower(FlowerType flType) {
         ArrayList<Flower> foundFlowers = new ArrayList<>();
         for (Flower flower : this.bucket) {
-            if (flower.getFlowerType() == flType) {
+            if (flower.getFlType() == flType) {
                 foundFlowers.add(flower);
             }
         }
