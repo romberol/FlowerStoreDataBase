@@ -7,13 +7,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequestMapping("/flowers/flowerbuckets") @RestController
+@RequestMapping("/flowers/flowerbuckets")
+@RestController
 public class FlowerBucketController {
     private final FlowerBucketService service;
+
     @Autowired
-    public FlowerBucketController(FlowerBucketService service){
+    public FlowerBucketController(FlowerBucketService service) {
         this.service = service;
     }
+
     @GetMapping
     public List<FlowerBucket> getAllFlowerBuckets() {
         return this.service.getAllFlowerBuckets();

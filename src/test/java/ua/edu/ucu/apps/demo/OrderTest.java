@@ -23,7 +23,8 @@ public class OrderTest {
 
     @Test
     public void testTransaction() {
-        Flower flower = new Flower(1, SEPAL, FlowerColor.RED, PRICE, FlowerType.TULIP);
+        Flower flower = new Flower(1, SEPAL, FlowerColor.RED,
+                PRICE, FlowerType.TULIP);
         Flower flowerSecond = new Flower(2, SEPAL,
                 FlowerColor.BLUE, PRICE, FlowerType.CHAMOMILE);
         Order order = new Order();

@@ -10,10 +10,12 @@ import ua.edu.ucu.apps.demo.flowers.FlowerType;
 public class DecoratorTest {
     private static final int PRICE = 100;
     private static final int SEPAL = 13;
-    private final int ID = 1;
+    private static final int ID = 1;
+
     @Test
-    public void testDecorator(){
-        Item flower = new Flower(ID, SEPAL, FlowerColor.BLUE, PRICE, FlowerType.TULIP);
+    public void testDecorator() {
+        Item flower = new Flower(ID, SEPAL, FlowerColor.BLUE,
+                PRICE, FlowerType.TULIP);
         flower = new PaperDecorator(flower);
         Assertions.assertEquals(flower.price(), PRICE + SEPAL);
     }
